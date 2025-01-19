@@ -1,0 +1,37 @@
+/* Estilos Gerais */
+
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+}
+
+h1 {
+    margin-top: 20px;
+}
+
+/* Tabulerio */
+
+#board {
+    display: grid;
+    grid-template-columns: repeat(8, 50px); /* 8 colunas de 50px */
+    grid-template-rows: repeat(8, 50px); /* 8 linhas de 50px */
+    gap: 0;
+    margin: 20px auto;
+}
+
+/* Casas do Tabuleiro */
+.square {
+    width: 50px;
+    height: 50px;
+}
+
+.square.white {
+    background-color: #fff;
+}
+
+.square.black {
+    background-color: #000;
+}
