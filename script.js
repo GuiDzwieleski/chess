@@ -22,5 +22,38 @@ function createBoard() {
     }
 }
 
+// Função para adicionar as peças
+function addPieces() {
+    const board = document.getElementById('board');
+    const squares = board.getElementsByClassName('square'); // Usando plural "squares"
+
+    // Inicializando as peças no tabuleiro
+    const initialPositions = [
+        ['rook', 'knight', 'bishop', 'queen', 'king', 'bishop', 'knight', 'rook'], // Linha 1 (peças brancas)
+        ['pawn', 'pawn', 'pawn', 'pawn', 'pawn', 'pawn', 'pawn', 'pawn'], // Linha 2 (peões brancos)
+        [], [], [], [], [], // Linha 3 a 6 (vazia)
+        ['pawn', 'pawn', 'pawn', 'pawn', 'pawn', 'pawn', 'pawn', 'pawn'], // Linha 7 (peões pretos)
+        ['rook', 'knight', 'bishop', 'queen', 'king', 'bishop', 'knight', 'rook'], // Linha 8 (peças pretas)
+    ];
+
+    // Adicionando as peças brancas e pretas
+    for (let row = 0; row < 8; row++) {
+        for (let col = 0; col < 8; col++) {
+            const squareIndex = row * 8 + col;
+            const piece = initialPositions[row][col];
+
+            if (piece) {
+                const pieceElement = document.createElement('div');
+                pieceElement.classList.add(piece);
+                pieceElement.classList.add(row < 2 ? 'white' : 'black');
+                squares[squareIndex].appendChild(pieceElement);
+            }
+        }
+    }
+}
+
 // Chamar a função para criar o tabuleiro
 createBoard();
+
+// Adicionar as peças ao tabuleiro
+addPieces();
